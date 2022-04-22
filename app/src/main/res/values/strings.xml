@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">UpBeat Stream</string>
+    <string name="upbeat_radio_logo">upbeat_radio_logo</string>
+    <string name="upbeat_radio_name">upbeat_radio_name</string>
+    <string name="play_button">play_button</string>
+</resources>
