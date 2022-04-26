@@ -3,12 +3,14 @@ package com.nemika.upbeatstream
 import android.annotation.SuppressLint
 import android.media.AudioManager
 import android.media.MediaPlayer
+import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bumptech.glide.Glide
 import com.nemika.upbeatstream.data.StreamData
 import retrofit2.Call
 import retrofit2.Callback
@@ -40,11 +42,20 @@ class MainActivity : AppCompatActivity() {
                     try {
                         val body = response.body()!!
                         val songView: TextView = findViewById(R.id.songName)
+                        val djView: TextView = findViewById(R.id.djName)
+                        val djAvatar: ImageView = findViewById(R.id.djAvatar)
 
                         val songName = "${body.song.title} by ${body.song.artist}"
 
                         if (songName != songView.text) {
                             songView.text = songName
+                            djView.text = "On Air: ${body.onair.name}"
+                            Glide
+                                .with(this@MainActivity)
+                                .load(body.onair.avatar)
+                                .placeholder(R.drawable.ubs)
+                                .into(djAvatar)
+
                         }
 
                     } catch (e: Exception) {
@@ -68,11 +79,11 @@ class MainActivity : AppCompatActivity() {
             if (!mediaPlayer.isPlaying) {
                 playAudio()
 
-                playButton.setImageResource(android.R.drawable.ic_media_pause)
+                playButton.setImageResource(R.drawable.ubs_stop_button)
             } else {
                 mediaPlayer.pause()
 
-                playButton.setImageResource(android.R.drawable.ic_media_play)
+                playButton.setImageResource(R.drawable.ubs_play_button)
             }
         }
     }
