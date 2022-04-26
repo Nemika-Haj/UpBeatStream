@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/mmnem/AndroidStudioProjects/UpBeatStream/app/src/main/res/layout/activity_loading.xml" value="0.2" />
         <entry key="..\:/Users/mmnem/AndroidStudioProjects/UpBeatStream/app/src/main/res/layout/activity_main.xml" value="0.33242753623188404" />
+        <entry key="..\:/Users/mmnem/AndroidStudioProjects/UpBeatStream/app/src/main/res/layout/loading.xml" value="0.33242753623188404" />
       </map>
     </option>
   </component>

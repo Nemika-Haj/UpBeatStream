@@ -34,8 +34,8 @@
 
     <ImageView
         android:id="@+id/upbeatLogo"
-        android:layout_width="155dp"
-        android:layout_height="290dp"
+        android:layout_width="182dp"
+        android:layout_height="212dp"
         android:contentDescription="@string/upbeat_radio_logo"
         app:layout_constraintBottom_toTopOf="@+id/upbeatText"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,4 +60,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/playButton"
         app:layout_constraintVertical_bias="0.515" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

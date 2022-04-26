@@ -4,8 +4,6 @@ import android.annotation.SuppressLint
 import android.media.AudioManager
 import android.media.MediaPlayer
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
@@ -20,11 +18,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.*
 import kotlin.concurrent.timerTask
 
-
-const val AUDIO_URL = "https://live.upbeat.pw/"
-
 class MainActivity : AppCompatActivity() {
-    private var mediaPlayer: MediaPlayer = MediaPlayer()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -69,10 +63,6 @@ class MainActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.songName).isSelected = true
 
         val playButton: ImageView = findViewById(R.id.playButton)
-
-        mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC)
-        mediaPlayer.setDataSource(AUDIO_URL)
-        mediaPlayer.prepare()
 
         playButton.setOnClickListener {
             if (!mediaPlayer.isPlaying) {
